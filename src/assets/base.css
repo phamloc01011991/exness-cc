@@ -1,0 +1,97 @@
+/* Định nghĩa màu sắc cho light mode và dark mode */
+:root {
+  --background-overall: #ebebeb;
+  --background-color: #fff;
+  --text-color: #100f15;
+  --text-sub-color: #676769;
+  --background-input: #dcdada;
+  --background-sub: #dbdbdb;
+  --background-close: #b8b8b8;
+  --background-button-disable: #a0a0a2;
+  --border-color: #e2e0e0;
+}
+
+
+
+[data-theme="dark"] {
+  --background-overall: #000;
+  --background-color: #100f15;
+  --text-color: #fff;
+  --text-sub-color: #a0a0a2;
+  --background-input: #2c2c2e;
+  --background-sub: #1c1c1e;
+  --background-close: #434449;
+  --background-button-disable: #a0a0a2;
+  --border-color: #3d3d3d;
+}
+
+.button {
+  display: inline-block;
+  background-color: #faa600;
+  color: #000;
+  font-weight: 600;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+}
+
+body {
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+  line-height: 1.6;
+  font-family: -apple-system,Inter,  BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.lhWEYW{
+  right: 0 !important;
+} 
+#meiqia_custorm {
+  position: relative;
+  z-index: -1;
+}
+#meiqia-container {
+  overflow: hidden;
+  height: 0;
+}
+.carousel__pagination-button::after {
+  background-color:  #2c2c2e !important;
+  transition: all ease 0.5s;
+  width: 15px !important;
+  border-radius: 0 !important;
+}
+.carousel__pagination-button--active::after {
+  background-color: #fff !important;
+  border-radius: 5px !important;
+  height: 2.5px;
+}
+
+.carousel__pagination-button {
+  padding: 0 !important;
+  
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+#widget-container {
+  border: 1px solid var(--border-color);
+}

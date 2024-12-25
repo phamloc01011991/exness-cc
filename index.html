@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- chỉ thêm khi ở server -->
+    <!-- <base href="https://exess.pro/"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="shortcut icon" href="./src/assets/favicon.png" type="image/x-icon" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript" src="https://app.meiqia.com/dist/meiqia.js"></script>
+
+    <title>Ex Finance | Kết nối tới thành công</title>
+  </head>
+
+  <body>
+    <style>
+      #meiqia-container > iframe .lhWEYW {
+        right: 0 !important;
+      }
+
+      #meiqia-container iframe {
+        height: 80% !important;
+      }
+    </style>
+    <div id="app" style="padding: 0"></div>
+    <script type="text/javascript">
+      ;(function (a, b, c, d, e, j, s) {
+        a[d] =
+          a[d] ||
+          function () {
+            ;(a[d].a = a[d].a || []).push(arguments)
+          }
+        ;(j = b.createElement(c)), (s = b.getElementsByTagName(c)[0])
+        j.async = true
+        j.charset = 'UTF-8'
+        j.src = 'https://static.meiqia.com/widget/loader.js'
+        s.parentNode.insertBefore(j, s)
+      })(window, document, 'script', '_MEIQIA')
+      _MEIQIA('entId', 'ac089d73f6f2d45039ba4afc67348135')
+      _MEIQIA('language', 'vi')
+      const token = JSON.parse(localStorage.getItem('user') || '{}')
+      const name = token.fullName
+      const id = token.id
+      _MEIQIA('metadata', {
+        name: name + ' (ID: ' + id + ')',
+        address: 'idAccount: ' + id
+      })
+    </script>
+    <script type="module" src="/src/main.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>

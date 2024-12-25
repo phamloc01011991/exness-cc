@@ -1,0 +1,5 @@
+@import './base.css';
+
+#tradingview iframe{
+  min-height: 380px;
+}
