@@ -580,7 +580,7 @@ onUnmounted(() => {
               <div class="left">
                 <h4 class="title">{{ languagePack.home_event1 }}</h4>
                 <div class="bottom">
-                  <span class="date">28 thg 8, 2024</span>
+                  <span class="date">1 thg 3, 2025</span>
                   <span class="status">Mới</span>
                 </div>
               </div>
@@ -592,7 +592,7 @@ onUnmounted(() => {
               <div class="left">
                 <h4 class="title">{{ languagePack.home_event2 }}</h4>
                 <div class="bottom">
-                  <span class="date">1 thg 8, 2024</span>
+                  <span class="date">23 thg 2, 2025</span>
                   <span class="status">Mới</span>
                 </div>
               </div>
@@ -604,7 +604,7 @@ onUnmounted(() => {
               <div class="left">
                 <h4 class="title">{{ languagePack.home_event3 }}</h4>
                 <div class="bottom">
-                  <span class="date">21 thg 7, 2024</span>
+                  <span class="date">12 thg 2, 2025</span>
                   <span class="status">Mới</span>
                 </div>
               </div>
@@ -616,7 +616,7 @@ onUnmounted(() => {
               <div class="left">
                 <h4 class="title">{{ languagePack.home_event4 }}</h4>
                 <div class="bottom">
-                  <span class="date">19 thg 6, 2024</span>
+                  <span class="date">19 thg 1, 2025</span>
                   <span class="status">Mới</span>
                 </div>
               </div>
