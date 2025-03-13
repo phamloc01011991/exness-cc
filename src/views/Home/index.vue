@@ -121,12 +121,12 @@ async function loadCheck() {
 
           } else {
             isLogined.value = false
-            loadding.value =true
+            loadding.value = true
           }
         })
     } else {
       isLogined.value = false
-      loadding.value =true
+      loadding.value = true
     }
   } catch (error) {
     console.log(error)
@@ -279,7 +279,7 @@ function toggleTheme() {
   window.location.reload();
 }
 onBeforeMount(() => {
-  if (localStorage.getItem('theme') === null) { 
+  if (localStorage.getItem('theme') === null) {
     localStorage.setItem('theme', 'dark');
     theme.value = 'dark';
   }
@@ -346,15 +346,17 @@ onUnmounted(() => {
 
 <template>
   <div v-if="loadding == true">
-    <div class="main" :data-theme="theme" >
-      <div class="main-content" >
+    <div class="main" :data-theme="theme">
+      <div class="main-content">
         <div class="contain">
           <!-- HEADER -->
           <div class="head">
             <div class="left">
               <div class="logo">
                 <RouterLink to="/profile" style="display: flex;">
-                  <img :src="userLogined.avatar == '' || !userLogined.avatar ? 'https://i.imgur.com/Me8yPX7.png' : userLogined.avatar " alt="">
+                  <img
+                    :src="userLogined.avatar == '' || !userLogined.avatar ? 'https://i.imgur.com/Me8yPX7.png' : userLogined.avatar"
+                    alt="">
                 </RouterLink>
               </div>
               <Search />
@@ -366,7 +368,7 @@ onUnmounted(() => {
               <div class="dark-mode" @click="toggleTheme">
                 <i class='bx bx-moon'></i>
               </div>
-              <div class="noti" @click="isShowPersonNotification=true">
+              <div class="noti" @click="isShowPersonNotification = true">
                 <i class='bx bxs-bell'></i>
               </div>
             </div>
@@ -376,14 +378,14 @@ onUnmounted(() => {
             <div class="money">
               <div class="left">
                 <span class="title">{{ languagePack.home_total_balance }}
-                  <i
-                    :class="[isHiddenAmount ? 'bx bxs-show' : 'bx bxs-low-vision']"
-                    @click="hiddenAmount()"
-                  ></i>
+                  <i :class="[isHiddenAmount ? 'bx bxs-show' : 'bx bxs-low-vision']" @click="hiddenAmount()"></i>
                 </span>
                 <div class="amount">
-                  <span class="usd">{{ isHiddenAmount ? formatUsdt((parseFloat(userLogined.balance) + parseFloat(farmingAmount))) : '********'}} <span v-if="isHiddenAmount">USD <i class='bx bxs-down-arrow' style="font-size: 8px;"></i></span></span>
-                  <span class="vnd"> {{ isHiddenAmount ? '≈ ' + formatVnd((parseFloat(userLogined.balance) + parseFloat(farmingAmount))*priceUSD): '******' }} </span>
+                  <span class="usd">{{ isHiddenAmount ? formatUsdt((parseFloat(userLogined.balance) +
+                    parseFloat(farmingAmount))) : '********' }} <span v-if="isHiddenAmount">USD <i
+                        class='bx bxs-down-arrow' style="font-size: 8px;"></i></span></span>
+                  <span class="vnd"> {{ isHiddenAmount ? '≈ ' + formatVnd((parseFloat(userLogined.balance) +
+                    parseFloat(farmingAmount)) * priceUSD) : '******' }} </span>
                 </div>
               </div>
               <div class="right" @click="showDepoit = true">
@@ -393,7 +395,7 @@ onUnmounted(() => {
             <div class="functions">
               <div class="item" @click="showDepoit = true">
                 <div class="icon">
-                  <i class='bx bx-log-in-circle bx-rotate-90' ></i>
+                  <i class='bx bx-log-in-circle bx-rotate-90'></i>
                 </div>
                 <span>{{ languagePack.home_button_depoint }}</span>
               </div>
@@ -411,13 +413,13 @@ onUnmounted(() => {
               </div>
               <div class="item" @click="showCshkPluin()">
                 <div class="icon">
-                  <i class='bx bx-headphone' ></i>
+                  <i class='bx bx-headphone'></i>
                 </div>
                 <span>CSKH</span>
               </div>
             </div>
             <div class="functions">
-              <a class="item" href="https://exess.homes/#blog" target="_blank">
+              <a class="item" href="https://exesstrading.app/#blog" target="_blank">
                 <div class="icon">
                   <i class='bx bxl-blogger'></i>
                 </div>
@@ -425,17 +427,17 @@ onUnmounted(() => {
               </a>
               <div class="item" @click="showVip = true">
                 <div class="icon hot">
-                  <i class='bx bx-diamond' ></i>
+                  <i class='bx bx-diamond'></i>
                 </div>
                 <span>VIP</span>
               </div>
-              <a class="item" href="https://exess.homes/#about" target="_blank">
+              <a class="item" href="https://exesstrading.app/#about" target="_blank">
                 <div class="icon">
                   <img src="../../assets/logo.png" alt="" style="width: 27px; height: 27px; object-fit: cover;">
                 </div>
                 <span>{{ languagePack.home_aboutus }}</span>
               </a>
-              <div class="item" @click="isShowMore=true">
+              <div class="item" @click="isShowMore = true">
                 <div class="icon">
                   <i class='bx bx-dots-horizontal-rounded'></i>
                 </div>
@@ -462,13 +464,12 @@ onUnmounted(() => {
           <!-- ASSET - MARKET -->
           <div class="list-data">
             <div class="tablink">
-                <span id="trending" class="link" @click="transferType('trending')">Trending</span>
-                <span id="all" class="link active" @click="transferType('all')">{{ languagePack.market_tablink1 }}</span>
-                <span id="new" class="link" @click="transferType('new')">{{ languagePack.market_tablink2 }}</span>
+              <span id="trending" class="link" @click="transferType('trending')">Trending</span>
+              <span id="all" class="link active" @click="transferType('all')">{{ languagePack.market_tablink1 }}</span>
+              <span id="new" class="link" @click="transferType('new')">{{ languagePack.market_tablink2 }}</span>
             </div>
             <div class="mk" id="trending1" style="display: none;">
-              <div class="list-item list-data__title flex"
-                style="color: var(--text-sub-color);  margin-bottom: 10px;">
+              <div class="list-item list-data__title flex" style="color: var(--text-sub-color);  margin-bottom: 10px;">
                 <div class="name" style="width: 35%">
                   {{ languagePack.market_item_tile1 }}
                 </div>
@@ -480,27 +481,18 @@ onUnmounted(() => {
               <div>
                 <template v-if="isWeekend == false">
                   <template v-for="(item, index) in symbols.data" :key="index">
-                      <Item v-if="item.status == '1'"
-                          :name="item.symbol" 
-                          :data="item.data"
-                          :vitri="index"
-                      />
+                    <Item v-if="item.status == '1'" :name="item.symbol" :data="item.data" :vitri="index" />
                   </template>
                 </template>
                 <template v-if="isWeekend == true">
-                    <template v-for="(item, index) in symbols.data" :key="index">
-                        <Item1 v-if="item.status == '1'"
-                            :name="item.symbol" 
-                            :data="item.data"
-                            :vitri="index"
-                        />
-                    </template>
+                  <template v-for="(item, index) in symbols.data" :key="index">
+                    <Item1 v-if="item.status == '1'" :name="item.symbol" :data="item.data" :vitri="index" />
+                  </template>
                 </template>
               </div>
             </div>
             <div class="mk" id="all1">
-              <div class="list-item list-data__title flex"
-                style="color: var(--text-sub-color);  margin-bottom: 10px;">
+              <div class="list-item list-data__title flex" style="color: var(--text-sub-color);  margin-bottom: 10px;">
                 <div class="name" style="width: 35%">
                   {{ languagePack.market_item_tile1 }}
                 </div>
@@ -512,27 +504,18 @@ onUnmounted(() => {
               <div>
                 <template v-if="isWeekend == false">
                   <template v-for="(item, index) in symbols.data" :key="index">
-                      <Item
-                          :name="item.symbol" 
-                          :data="item.data"
-                          :vitri="index"
-                      />
+                    <Item :name="item.symbol" :data="item.data" :vitri="index" />
                   </template>
                 </template>
                 <template v-if="isWeekend == true">
-                    <template v-for="(item, index) in symbols.data" :key="index">
-                        <Item1
-                            :name="item.symbol" 
-                            :data="item.data"
-                            :vitri="index"
-                        />
-                    </template>
+                  <template v-for="(item, index) in symbols.data" :key="index">
+                    <Item1 :name="item.symbol" :data="item.data" :vitri="index" />
+                  </template>
                 </template>
               </div>
             </div>
             <div class="mk" id="new1" style="display: none;">
-              <div class="list-item list-data__title flex"
-                style="color: var(--text-sub-color);  margin-bottom: 10px;">
+              <div class="list-item list-data__title flex" style="color: var(--text-sub-color);  margin-bottom: 10px;">
                 <div class="name" style="width: 35%">
                   {{ languagePack.market_item_tile1 }}
                 </div>
@@ -544,21 +527,13 @@ onUnmounted(() => {
               <div>
                 <template v-if="isWeekend == false">
                   <template v-for="(item, index) in symbols.data" :key="index">
-                      <Item v-if="item.status == '2'"
-                          :name="item.symbol" 
-                          :data="item.data"
-                          :vitri="index"
-                      />
+                    <Item v-if="item.status == '2'" :name="item.symbol" :data="item.data" :vitri="index" />
                   </template>
                 </template>
                 <template v-if="isWeekend == true">
-                    <template v-for="(item, index) in symbols.data" :key="index">
-                        <Item1 v-if="item.status == '2'"
-                            :name="item.symbol" 
-                            :data="item.data"
-                            :vitri="index"
-                        />
-                    </template>
+                  <template v-for="(item, index) in symbols.data" :key="index">
+                    <Item1 v-if="item.status == '2'" :name="item.symbol" :data="item.data" :vitri="index" />
+                  </template>
                 </template>
               </div>
             </div>
@@ -626,18 +601,18 @@ onUnmounted(() => {
             </div>
 
           </div>
-          
+
         </div>
       </div>
       <!-- <PopUser v-if="!isLogined" /> -->
       <LangPopup v-if="showPopupLanguage" @close-popup="showPopupLanguage = false" />
       <Depoint v-if="showDepoit" @close-popup="showDepoit = false" />
-      <PopUser v-if="showLogin" @close-popup="showLogin = false"/>
-      <Invite v-if="isShowInvite" @close-popup="isShowInvite = false" :referalCode="userLogined.referralCode"/>
-      <Bonus v-if="showBonus" @close-popup="showBonus = false"/>
-      <PersonNotification v-if="isShowPersonNotification" @close-popup="isShowPersonNotification = false"/>
-      <SupportVip v-if="showVip" @close-popup="showVip = false"/>
-      <MoreFuncs v-if="isShowMore" @close-popup="isShowMore = false" :userLogined="userLogined"/>
+      <PopUser v-if="showLogin" @close-popup="showLogin = false" />
+      <Invite v-if="isShowInvite" @close-popup="isShowInvite = false" :referalCode="userLogined.referralCode" />
+      <Bonus v-if="showBonus" @close-popup="showBonus = false" />
+      <PersonNotification v-if="isShowPersonNotification" @close-popup="isShowPersonNotification = false" />
+      <SupportVip v-if="showVip" @close-popup="showVip = false" />
+      <MoreFuncs v-if="isShowMore" @close-popup="isShowMore = false" :userLogined="userLogined" />
     </div>
   </div>
   <div v-else>
@@ -648,32 +623,38 @@ onUnmounted(() => {
 a.item {
   color: var(--text-color);
 }
+
 .mk {
   padding-inline: 12px;
   padding-bottom: 10px;
 }
+
 .tablink {
-    display: flex;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 20px;
-    padding-inline: 12px;
-    padding-top: 10px;
+  display: flex;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 20px;
+  padding-inline: 12px;
+  padding-top: 10px;
 }
+
 .tablink span {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-sub-color);
-    display: inline-block;
-    margin-right: 15px;
-    position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-sub-color);
+  display: inline-block;
+  margin-right: 15px;
+  position: relative;
 }
+
 .tablink span:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
+
 .tablink span.active {
-    color: var(--text-color);
+  color: var(--text-color);
 }
+
 /* new css */
 /* contain */
 .contain {
@@ -696,12 +677,12 @@ a.item {
   background: var(--background-overall);
   height: 100vh;
   min-height: 100vh;
-  overflow-y: scroll;  
+  overflow-y: scroll;
 }
 
 .heading h2 {
   color: var(--text-color);
-  padding: 4px 0px 3px 0px ;
+  padding: 4px 0px 3px 0px;
   font-size: 17px;
   line-height: 17px;
   margin-bottom: 5px;
@@ -762,6 +743,7 @@ a.item {
   display: flex;
   align-items: center;
 }
+
 /* user logined */
 .user-logined .money {
   display: flex;
@@ -769,51 +751,63 @@ a.item {
   align-items: center;
   margin-block: 20px;
 }
-.user-logined .money  .left {
+
+.user-logined .money .left {
   padding-left: 5px;
 }
+
 .user-logined .money .left .title {
   color: var(--text-sub-color);
   display: block;
   font-size: 13px;
   margin-bottom: 3px;
 }
-.user-logined .money  .left .title i {
+
+.user-logined .money .left .title i {
   vertical-align: middle;
   display: inline-block;
   margin-left: 5px;
 }
-.user-logined .money  .left .amount span {
+
+.user-logined .money .left .amount span {
   font-size: 13px;
 }
-.user-logined .money  .left .amount span.usd {
+
+.user-logined .money .left .amount span.usd {
   display: block;
   font-size: 19px;
   font-weight: 700;
 }
-.user-logined .money  .left .amount span.usd  span {
+
+.user-logined .money .left .amount span.usd span {
   font-size: 12px;
 }
-.user-logined .money  .left .amount span.vnd {
+
+.user-logined .money .left .amount span.vnd {
   color: var(--text-sub-color);
 }
-.user-logined .money  .right span {
+
+.user-logined .money .right span {
   padding: 5px 15px;
   border-radius: 5px;
   margin-right: 10px;
 }
+
 .user-logined .functions {
   display: flex;
   justify-content: space-between;
 }
+
 .user-logined .functions .item {
   width: 21%;
   text-align: center;
 }
+
 .user-logined .functions .item .icon {
   position: relative;
   display: inline-block;
 }
+
 .user-logined .functions .item .icon.hot::after {
   content: 'HOT';
   color: #000;
@@ -826,18 +820,22 @@ a.item {
   padding: 1px 2px;
   border-radius: 5px;
 }
+
 .user-logined .functions .item i {
   font-size: 27px;
   display: inline-block;
   color: #faa600;
 }
+
 .user-logined .functions {
   margin-bottom: 10px;
 }
+
 .user-logined .functions .item span {
   font-size: 13px;
   display: block
 }
+
 /* Join us */
 .join-us {
   margin-block: 20px;
@@ -892,33 +890,41 @@ a.item {
   border-bottom: 1px solid var(--border-color);
   background-color: var(--background-color);
 }
+
 .event .new-event {
   padding: 15px 12px 10px 12px;
   background-color: var(--background-color);
 
 }
+
 .event .new-event .item {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
 }
+
 .event .new-event .item .left {
   width: 55%;
 }
+
 .event .new-event .item .left .title {
   font-size: 13px;
   color: var(--text-color);
 }
+
 .event .new-event .item .bottom {
   font-size: 12px;
 }
-.event .new-event .item .bottom  {
+
+.event .new-event .item .bottom {
   display: inline-block;
   margin-top: 3px;
 }
+
 .event .new-event .item .bottom .date {
   color: var(--text-sub-color);
 }
+
 .event .new-event .item .bottom .status {
   margin-left: 10px;
   background: #1c5137;
@@ -926,15 +932,14 @@ a.item {
   padding: 2px;
   border-radius: 3px;
 }
+
 .event .new-event .item .right {
   width: 35%;
 }
+
 .event .new-event .item .right img {
   width: 100%;
   height: 80px;
   object-fit: cover;
   border-radius: 3px;
-}
-
-
-</style>
+}</style>

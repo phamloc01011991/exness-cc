@@ -2,33 +2,32 @@
 import { onMounted, ref } from 'vue'
 import { languagePack } from '../../../languages';
 import SupportInvite from '../../Layout/home/supportInvite.vue'
-const emit =defineEmits(['close-popup']);
+const emit = defineEmits(['close-popup']);
 const closePopup = () => {
-  emit('close-popup');
+    emit('close-popup');
 };
 const showOk = ref(false)
 const props = defineProps({
     referalCode: String
 })
-function onReady(url)
-{
-  var qrcode = new QRCode("id_qrcode");
-  qrcode.makeCode(`https://exesstrading.pro/${props.referalCode }`)
+function onReady(url) {
+    var qrcode = new QRCode("id_qrcode");
+    qrcode.makeCode(`https://exesstrade.com/${props.referalCode}`)
 }
 const theme = ref(localStorage.getItem('theme') || 'dark');
 
 function copyClipboard(textToCopy) {
     if (!navigator.clipboard) {
-    console.log("Trình duyệt không hỗ trợ API clipboard.");
-} else {
-    // Sao chép nội dung vào bộ nhớ đệm
-    navigator.clipboard.writeText(textToCopy)
-        .then(function() {
-            showOk.value = true
-        })
+        console.log("Trình duyệt không hỗ trợ API clipboard.");
+    } else {
+        // Sao chép nội dung vào bộ nhớ đệm
+        navigator.clipboard.writeText(textToCopy)
+            .then(function () {
+                showOk.value = true
+            })
+    }
 }
-}
-onMounted(()=>{
+onMounted(() => {
     onReady("xin chao")
 })
 </script>
@@ -57,14 +56,17 @@ onMounted(()=>{
             <div class="img-intro">
                 <div class="step">
                     <div class="top-step">
-                        <i class='bx bx-user-plus' ></i>
+                        <i class='bx bx-user-plus'></i>
                         <span>{{ languagePack.home_invite_sharecode }}</span>
                     </div>
                     <div class="code">
-                        <span>{{ languagePack.home_invite_mycode }}</span> <span class="c">{{ props.referalCode }}<i @click="copyClipboard(`${props.referalCode}`)" class='bx bx-copy' ></i></span>
+                        <span>{{ languagePack.home_invite_mycode }}</span> <span class="c">{{ props.referalCode }}<i
+                                @click="copyClipboard(`${props.referalCode}`)" class='bx bx-copy'></i></span>
                     </div>
                     <div class="code">
-                        <span>{{ languagePack.home_invite_link_invite }}</span> <span class="c">https://exesstrading.pro/{{ props.referalCode }} <i @click="copyClipboard(`https://exesstrading.pro/${props.referalCode}`)" class='bx bx-copy' ></i></span>
+                        <span>{{ languagePack.home_invite_link_invite }}</span> <span class="c">https://exesstrade.com/{{
+                            props.referalCode }} <i @click="copyClipboard(`https://exesstrade.com/${props.referalCode}`)"
+                                class='bx bx-copy'></i></span>
                     </div>
                     <div class="qr-code-container">
                         <span>{{ languagePack.home_invite_link_orshare }}</span>
@@ -73,7 +75,7 @@ onMounted(()=>{
 
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -127,21 +129,26 @@ onMounted(()=>{
     padding-bottom: 85px;
     z-index: 999999;
 }
+
 .top {
     background: var(--background-color);
     padding: 40px 12px 50px 12px;
 }
+
 .top .ct {
-  position: relative;
+    position: relative;
 }
+
 .top .back {
-  font-size: 25px;
+    font-size: 25px;
 }
+
 .top h4 {
-  font-weight: 600;
-  font-size: 18px;
+    font-weight: 600;
+    font-size: 18px;
 
 }
+
 .top h4 span {
     color: var(--text-sub-color);
 }
@@ -151,18 +158,22 @@ onMounted(()=>{
     background: var(--background-color);
     padding: 40px 12px 40px 12px;
 }
+
 .img-intro {
     margin-top: 10px;
 }
+
 .howto h4 {
     font-size: 16px;
 }
+
 .img-intro i {
     display: inline-block;
     margin-right: 10px;
     font-size: 22px;
     vertical-align: middle;
 }
+
 .step .code {
     display: flex;
     justify-content: space-between;
@@ -172,64 +183,78 @@ onMounted(()=>{
     padding: 6px 10px;
     border-radius: 5px;
 }
+
 .step .code .c {
     color: var(--text-color);
     font-weight: 600;
     letter-spacing: 0.3px;
 }
+
 .step .code .c i {
     font-size: 16px;
     display: inline-block;
     margin-left: 5px;
     color: #faa600;
 }
+
 .dk h4 {
     margin-bottom: 15px;
 }
+
 .dk {
     margin-top: 15px;
     background: var(--background-color);
     padding: 20px 12px;
 }
+
 .dk .sec {
     display: flex;
     margin-bottom: 5px;
 }
+
 .dk span {
     display: inline-block;
     margin-right: 10px;
     color: #faa600;
     font-weight: 600;
 }
+
 .intro {
     display: flex;
     margin-top: 25px;
 }
+
 .intro span {
     display: block;
 }
+
 .intro div {
     width: 50%;
     text-align: left;
 }
+
 .intro .right {
     padding-left: 20px;
     border-left: 1px solid var(--border-color);
 }
+
 .intro .t {
     color: var(--text-sub-color);
     margin-bottom: 5px;
 }
+
 .intro .b {
     font-size: 15px;
     font-weight: 600;
     color: #faa600;
 }
+
 .intro .b strong {
     font-size: 13px;
     font-weight: 500;
     color: var(--text-color);
 }
+
 .qr_code {
     display: flex;
     justify-content: center;
@@ -237,17 +262,18 @@ onMounted(()=>{
     overflow: hidden;
     border: 1px solid var(--text-sub-color);
 }
+
 .qr-code-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
 }
+
 .qr-code-container span,
-.qr-code-container div {
-}
+.qr-code-container div {}
+
 .qr-code-container span {
     color: var(--text-sub-color);
     font-size: 13px;
-}
-</style>
+}</style>
