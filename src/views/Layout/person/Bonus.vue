@@ -53,7 +53,7 @@ onMounted(() => {
           <h4>Thưởng nạp tích luỹ trong ngày</h4>
           <p>Thưởng nạp tích luỹ trong ngày đối với khách hàng mới</p>
           <button class="button dp" @click="isBonusDepoint = true" :disabled="check?.rewardInfo.isEligible == false"
-            :class="check?.rewardInfo.isEligible == false ? 'aa' : ''">Xem</button>
+            :class="check?.rewardInfo.isEligible == true ? '' : 'aa'">Xem</button>
         </div>
       </div>
     </div>
