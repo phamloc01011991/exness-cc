@@ -171,7 +171,7 @@ const lang = {
     person_bonus_event: 'Sự kiện',
     person_bonus_title_event: 'Mời bạn bè, kiếm phần thưởng',
     person_bonus_title_ct: 'Mời bạn bè của bạn tham giá Exness Finance để mở khoá những phần thưởng giá trị',
-    person_bonus_btn_recieve: 'Nhận',
+    person_bonus_btn_recieve: 'Xem',
     //layout_person_changepass
     person_changepass_err1: 'Mật khẩu mới phải có ít nhất 4 kí tự',
     person_changepass_err2: 'Mật khẩu mới phải có ít nhất 4 kí tự',

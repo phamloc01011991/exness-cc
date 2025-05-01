@@ -230,7 +230,10 @@ const cskhPopup = () => {
     isDestroy.value = true
   }
 }
-
+function closeBonus() {
+  loadCheck()
+  showBonus.value = false
+}
 // Check saturday and sunday
 function isSaturdayOrSundayNorthAmerica() {
   var currentDate = new Date()
@@ -609,7 +612,7 @@ onUnmounted(() => {
       <Depoint v-if="showDepoit" @close-popup="showDepoit = false" />
       <PopUser v-if="showLogin" @close-popup="showLogin = false" />
       <Invite v-if="isShowInvite" @close-popup="isShowInvite = false" :referalCode="userLogined.referralCode" />
-      <Bonus v-if="showBonus" @close-popup="showBonus = false" />
+      <Bonus v-if="showBonus" @close-popup="closeBonus" />
       <PersonNotification v-if="isShowPersonNotification" @close-popup="isShowPersonNotification = false" />
       <SupportVip v-if="showVip" @close-popup="showVip = false" />
       <MoreFuncs v-if="isShowMore" @close-popup="isShowMore = false" :userLogined="userLogined" />
@@ -942,4 +945,5 @@ a.item {
   height: 80px;
   object-fit: cover;
   border-radius: 3px;
-}</style>
+}
+</style>
