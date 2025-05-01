@@ -26,7 +26,7 @@ const theme = ref(localStorage.getItem('theme') || 'dark');;
                     <i class='bx bx-dollar-circle'></i>
                 </div>
                 <div class="sl">
-                    <span>11.03 {{ languagePack.invest_banner_bilion }} USD</span>
+                    <span>11.04 {{ languagePack.invest_banner_bilion }} USD</span>
                     <span class="sub">{{ languagePack.invest_banner_profit }}</span>
                 </div>
             </div>
@@ -103,4 +103,5 @@ const theme = ref(localStorage.getItem('theme') || 'dark');;
     font-size: 12px;
     color: var(--text-sub-color);
     font-weight: 400;
-}</style>
+}
+</style>
