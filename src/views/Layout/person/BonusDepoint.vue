@@ -12,7 +12,7 @@ const closePopup = () => {
 const props = defineProps({
     check: Object
 })
-
+//ok
 function getFirstNotClaimedReward() {
     return props.check?.rewardInfo?.rewardList
         .filter(item => item.status === 'notclaim')
