@@ -17,7 +17,7 @@ const theme = ref(localStorage.getItem('theme') || 'dark');;
                     <i class='bx bx-user-circle'></i>
                 </div>
                 <div class="sl">
-                    <span>478,353</span>
+                    <span>478,354</span>
                     <span class="sub">{{ languagePack.invest_banner_person_join }}</span>
                 </div>
             </div>
