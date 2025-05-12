@@ -285,6 +285,7 @@ onBeforeMount(() => {
   if (localStorage.getItem('theme') === null) {
     localStorage.setItem('theme', 'dark');
     theme.value = 'dark';
+    // ok
   }
   document.documentElement.className = theme.value;
 });
